@@ -1,0 +1,43 @@
+.block-one {
+    background-color: $color-light-green;
+    display: grid;
+    column-gap: 1.3%;
+    row-gap: 15px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 33.333% 50.427% 13.675%;
+    grid-template-areas:
+        "a b c"
+        "d d e";
+    counter-reset: num;
+
+    &__item {
+        padding: 68px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-green;
+
+        &:nth-child(1) {
+            grid-area: a;
+        }
+        &:nth-child(2) {
+            grid-area: b;
+        }
+        &:nth-child(3) {
+            grid-area: c;
+        }
+        &:nth-child(4) {
+            grid-area: d;
+        }
+        &:nth-child(5) {
+            grid-area: e;
+        }
+
+        &::before {
+            counter-increment: num;
+            content: counter(num);
+            font-size: 53px;
+            color: $color-white;
+        }
+    }
+}

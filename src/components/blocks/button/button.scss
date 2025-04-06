@@ -1,0 +1,12 @@
+.button {
+    color: $color-white;
+    border: none;
+    border-radius: 5px;
+    background-color: $color-light-blue;
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        padding: 8px 15px;
+    }
+}
