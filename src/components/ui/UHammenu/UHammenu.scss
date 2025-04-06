@@ -1,0 +1,28 @@
+.ham {
+    cursor: pointer;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    &-bar {
+        width: 20px;
+        height: 2px;
+        background-color: $color-white;
+        transition: 0.3s;
+    }
+
+    &--active &-bar--one {
+        transform: rotate(-45deg) translate(-4px, 4px);
+    }
+    &--active &-bar--two {
+        opacity: 0;
+    }
+    &--active &-bar--three {
+        transform: rotate(45deg) translate(-4px, -4px);
+    }
+
+    @media only screen and (min-width: 900px) {
+        display: none;
+    }
+}

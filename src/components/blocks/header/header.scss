@@ -1,5 +1,41 @@
 .header {
-    background-color: $color-blue;
-    height: 100px;
-    padding: 30.5px 30px;
+    background-color: $color-violet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 17px 26px 18px 27px;
+        max-width: 1170px;
+        width: 100%;
+    }
+    &__logo {
+        display: none;
+    }
+
+    &__icon {
+        stroke: $color-yellow;
+        transition: fill 0.3s ease-in-out;
+    }
+
+    @media only screen and (min-width: 900px) {
+        &__logo {
+            display: block;
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 48px;
+            color: $color-white;
+        }
+
+        &__wrap {
+            padding: 17px 0 28px 3px;
+        }
+
+        &__icon {
+            display: none;
+        }
+    }
 }
