@@ -41,5 +41,9 @@
         font-size: 16px;
         color: $color-white;
         text-decoration: none;
+
+        &:hover {
+            color: $color-yellow;
+        }
     }
 }

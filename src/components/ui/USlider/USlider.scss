@@ -1,0 +1,58 @@
+.controls {
+    margin-block-end: 20px;
+    &__button {
+        cursor: pointer;
+        user-select: none;
+    }
+}
+
+.button-radio {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    inline-size: 15px;
+    block-size: 15px;
+    border-radius: 50%;
+    border: 1px solid $color-yellow;
+
+    & + .button-radio {
+        margin-inline-start: 12px;
+    }
+    &.active {
+        background-color: #c56fff;
+        pointer-events: none;
+    }
+
+    &:focus-visible {
+        outline: 3px solid white;
+        outline-offset: -1px;
+    }
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-inline-size: 600px;
+    inline-size: 100%;
+    position: relative;
+}
+
+.slides {
+    inline-size: 100%;
+}
+
+.slide {
+    display: none;
+    text-align: center;
+}
+
+.slide--active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .slider {
+        // max-inline-size: 260px;
+    }
+}
