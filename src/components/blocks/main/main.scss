@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20px 20px 20px;
+
+  &__caption {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 20px;
+    color: $color-black;
+    margin: 0;
+    margin-bottom: 23px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: $color-violet;
+      opacity: 0.2;
+      margin-top: 10px;
+    }
+  }
+
+  & .button {
+    margin-top: 43px;
+  }
+}
