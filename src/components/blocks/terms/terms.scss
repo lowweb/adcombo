@@ -1,0 +1,17 @@
+.terms {
+  display: flex;
+  gap: 10px;
+
+  &__text {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 160%;
+    color: $color-black;
+  }
+
+  &__link {
+    color: $color-violet;
+    text-decoration: none;
+  }
+}
