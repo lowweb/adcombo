@@ -56,6 +56,24 @@
   }
 }
 
+@media only screen and (min-width: 900px) {
+  .slider {
+    display: flex;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__controls {
+      display: none;
+    }
+
+    &__item {
+      display: flex;
+    }
+  }
+}
+
 @keyframes slide-in {
   from {
     transform: translateX(50%);
