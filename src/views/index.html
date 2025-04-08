@@ -96,16 +96,17 @@
     @@include("../components/blocks/header/header.html")
 
     <!-- @@include("../blocks/modules/popup/popup.html") -->
-    <main class="page__main main">
-      <!-- <div class="main__wrap">
-
-        </div> -->
-      <h1 class="main__caption">Закончились кредиты?</h1>
-      @@include("../components/ui/USlider/USlider.html")
-      <button id="sendRequest" class="button button--type2">Try now</button>
-      @@include("../components/blocks/terms/terms.html")
-      <!-- @@include("../blocks/modules/block-one/block-one.html")
-            @@include("../blocks/modules/block-two/block-two.html") -->
+    <main class="page__main">
+      @@include("../components/blocks/sidebar/sidebar.html")
+      <div class="main">
+        <h1 class="main__caption">Закончились кредиты?</h1>
+        @@include("../components/ui/USlider/USlider.html")
+        <button id="sendRequest" class="button button--type2">Try now</button>
+        @@include("../components/blocks/terms/terms.html")
+        @@include("../components/blocks/functions/functions.html")
+        <!-- @@include("../blocks/modules/block-one/block-one.html")
+              @@include("../blocks/modules/block-two/block-two.html") -->
+      </div>
     </main>
     <!-- @@include("../blocks/modules/footer/footer.html") -->
 
