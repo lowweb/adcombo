@@ -1,58 +1,67 @@
 .controls {
-    margin-block-end: 20px;
-    &__button {
-        cursor: pointer;
-        user-select: none;
-    }
-}
+  display: flex;
+  gap: 8px;
 
-.button-radio {
+  &__button {
+    cursor: pointer;
+    user-select: none;
     background-color: transparent;
     margin: 0;
     padding: 0;
-    inline-size: 15px;
-    block-size: 15px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    border: 1px solid $color-yellow;
+    border: none;
+    // border: 1px solid $color-yellow;
+    background-color: $color-yellow;
 
-    & + .button-radio {
-        margin-inline-start: 12px;
+    & + .controls__button {
+      //   margin-inline-start: 12px;
     }
     &.active {
-        background-color: #c56fff;
-        pointer-events: none;
+      background-color: $color-violet;
+      //   background: 1px solid $color-violet;
+      pointer-events: none;
     }
 
     &:focus-visible {
-        outline: 3px solid white;
-        outline-offset: -1px;
+      outline: 3px solid $color-yellow;
+      outline-offset: -1px;
     }
+  }
 }
 
 .slider {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-inline-size: 600px;
-    inline-size: 100%;
-    position: relative;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
 
-.slides {
+  &__controls {
+    margin-top: 8px;
+  }
+  &__list {
     inline-size: 100%;
-}
+  }
 
-.slide {
+  &__item {
     display: none;
     text-align: center;
-}
+  }
 
-.slide--active {
+  &__item--active {
     display: block;
+    animation: 0.5s alternate slide-in;
+  }
 }
 
-@media (max-width: 768px) {
-    .slider {
-        // max-inline-size: 260px;
-    }
+@keyframes slide-in {
+  from {
+    transform: translateX(50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
 }
