@@ -1,85 +1,94 @@
 .controls {
-  display: flex;
-  gap: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
 
-  &__button {
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    border: none;
-    // border: 1px solid $color-yellow;
-    background-color: $color-yellow;
+    &__button {
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        border: none;
+        // border: 1px solid $color-yellow;
+        background-color: $color-yellow;
 
-    & + .controls__button {
-      //   margin-inline-start: 12px;
-    }
-    &.active {
-      background-color: $color-violet;
-      //   background: 1px solid $color-violet;
-      pointer-events: none;
-    }
+        & + .controls__button {
+            //   margin-inline-start: 12px;
+        }
+        &.active {
+            background-color: $color-violet;
+            //   background: 1px solid $color-violet;
+            pointer-events: none;
+        }
 
-    &:focus-visible {
-      outline: 3px solid $color-yellow;
-      outline-offset: -1px;
+        &:focus-visible {
+            outline: 3px solid $color-yellow;
+            outline-offset: -1px;
+        }
     }
-  }
 }
 
 .slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  position: relative;
+    position: relative;
 
-  &__controls {
-    margin-top: 8px;
-  }
-  &__list {
-    inline-size: 100%;
-  }
-
-  &__item {
-    display: none;
-    text-align: center;
-  }
-
-  &__item--active {
-    display: block;
-    animation: 0.5s alternate slide-in;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .slider {
-    display: flex;
-
-    &__list {
-      display: flex;
-      flex-wrap: wrap;
-    }
     &__controls {
-      display: none;
+        margin-top: 8px;
+    }
+    &__list {
+        width: 100%;
     }
 
     &__item {
-      display: flex;
+        display: none;
+        text-align: center;
     }
-  }
+
+    &__item--active {
+        display: block;
+        animation: 0.5s alternate slide-in;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .slider {
+        display: flex;
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+            row-gap: 16px;
+            column-gap: 30px;
+            box-sizing: border-box;
+            justify-content: space-between; /* Растяжение элементов последнего ряда */
+        }
+        &__controls {
+            display: none;
+        }
+
+        &__item {
+            display: flex;
+            width: 100%;
+            flex: 1 1 150px; /* Минимальная ширина 150px, но элементы могут растягиваться */
+            max-width: calc(100%); /* Ограничиваем максимальную ширину */
+        }
+        &__item--active {
+            animation: 0s alternate none;
+        }
+    }
 }
 
 @keyframes slide-in {
-  from {
-    transform: translateX(50%);
-  }
+    from {
+        transform: translateX(50%);
+    }
 
-  to {
-    transform: translateX(0%);
-  }
+    to {
+        transform: translateX(0%);
+    }
 }

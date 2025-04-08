@@ -1,0 +1,36 @@
+.discount {
+    display: none;
+}
+
+@media only screen and (min-width: 900px) {
+    .discount {
+        width: 100%;
+        display: flex;
+        gap: 31px;
+        background-color: #c15ca1;
+        border-radius: 10px;
+        padding: 13px;
+
+        &__title {
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 40px;
+            letter-spacing: 0.04em;
+            text-align: center;
+            color: #ffcf2d;
+        }
+        &__count {
+            display: flex;
+            align-items: center;
+            gap: 38px;
+
+            &-text {
+                font-family: $font-family;
+                font-weight: 700;
+                font-size: 16px;
+                text-align: center;
+                color: $color-white;
+            }
+        }
+    }
+}

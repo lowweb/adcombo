@@ -1,51 +1,141 @@
 .card {
-  position: relative;
-  margin-left: 20px;
-  background-color: $color-violet;
-  border-radius: 10px;
-  font-family: $font-family;
-  font-weight: 700;
-  font-size: 24px;
-  text-align: center;
-  color: $color-white;
-  padding: 15px 33px 16px 33px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
-  &__badge {
-    color: $color-black;
+    position: relative;
+    margin-left: 20px;
+    background-color: $color-violet;
+    border-radius: 10px;
     font-family: $font-family;
     font-weight: 700;
-    font-size: 14px;
-    background-color: $color-yellow;
-    position: absolute;
-    padding: 3px 10px 4px 10px;
-    border-radius: 5px;
-    left: -20px;
-  }
-  &__price-wrap {
+    font-size: 24px;
+    text-align: center;
+    color: $color-white;
+    padding: 15px 33px 16px 33px;
     display: flex;
     align-items: center;
-    gap: 2px;
-  }
-  &__price-one {
-    display: flex;
-    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
 
-    &::after {
-      content: "CR";
-      display: inline-flex;
-      // width: 17px;
-      // height: 17px;
-      border-radius: 50%;
-      background-color: $color-yellow;
-      font-family: $font-family;
-      font-weight: 700;
-      font-size: 8px;
-      color: $color-black;
-      padding: 4px;
-      margin-left: 5px;
+    &__badge {
+        color: $color-black;
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 14px;
+        background-color: $color-yellow;
+        position: absolute;
+        padding: 3px 10px 4px 10px;
+        border-radius: 5px;
+        left: -20px;
     }
-  }
+    &__price-wrap {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+    &__price-one {
+        display: flex;
+        align-items: center;
+
+        &::after {
+            content: "CR";
+            display: inline-flex;
+            // width: 17px;
+            // height: 17px;
+            border-radius: 50%;
+            background-color: $color-yellow;
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 8px;
+            color: $color-black;
+            padding: 4px;
+            margin-left: 5px;
+        }
+    }
+
+    &__button {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .card {
+        position: relative;
+        margin-left: 0px;
+        background-color: rgb(149, 100, 170, 0.1);
+        font-family: $font-family;
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+        color: $color-black;
+        padding: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        gap: 11px;
+        border: solid 1px $color-violet;
+
+        &__badge {
+            display: none;
+            width: max-content;
+            color: $color-black;
+            font-family: $font-family;
+            font-weight: 700;
+            font-size: 14px;
+            background-color: $color-yellow;
+            position: absolute;
+            padding: 3px 10px 4px 10px;
+            border-radius: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: -11px;
+        }
+
+        &:hover {
+            background-color: $color-violet;
+            color: $color-white;
+            & .card__badge {
+                display: flex;
+            }
+
+            & .card__button {
+                color: $color-black;
+                background-color: $color-yellow;
+            }
+        }
+
+        &__price-wrap {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+        &__price-one {
+            display: flex;
+            align-items: center;
+
+            &::after {
+                content: "CR";
+                display: inline-flex;
+                // width: 17px;
+                // height: 17px;
+                border-radius: 50%;
+                background-color: $color-yellow;
+                font-family: $font-family;
+                font-weight: 700;
+                font-size: 8px;
+                color: $color-black;
+                padding: 4px;
+                margin-left: 5px;
+            }
+        }
+        &__price-sep {
+            display: none;
+        }
+        &__price-two {
+            display: none;
+        }
+
+        &__button {
+            display: flex;
+        }
+    }
 }
